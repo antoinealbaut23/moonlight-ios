@@ -942,6 +942,9 @@ static NSMutableSet* hostList;
     // Disable bounce-back on reveal VC otherwise the settings will snap closed
     // if the user drags all the way off the screen opposite the settings pane.
     self.revealViewController.bounceBackOnOverdraw = NO;
+
+    // Match the navigation bar above its safe-area content on displays with a top reserved area.
+    self.navigationController.view.backgroundColor = self.navigationController.navigationBar.barTintColor;
 #else
     // The settings button will direct the user into the Settings app on tvOS
     [_settingsButton setTarget:self];
